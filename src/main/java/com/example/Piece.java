@@ -62,8 +62,10 @@ public class Piece {
     //going to score any points.
     public ArrayList<Square> getLegalMoves(Board b, Square start){
         //can accesss board b.getSquareArray()
-        if(start.getCol()<7){
+        if(start.getCol()<=8){
             Square right = b.getSquareArray()[start.getrow()][start.getCol()+1];
+            Square down = b.getSquareArray()[start.getrow()-1][start.getcol()];
+            Square left = b.get
             if(right.getOccupyingPiece().getColor()!=color){
                 
             }
