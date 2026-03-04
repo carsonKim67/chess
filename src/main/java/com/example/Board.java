@@ -95,6 +95,10 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
     void initializePieces() {
     	//bishop is on the 3rd column
     	board[0][2].put(new Piece(true, RESOURCES_WBISHOP_PNG));
+        board[0][5].put(new Piece(true, RESOURCES_WBISHOP_PNG));
+        board[7][2].put(new Piece(false, RESOURCES_BBISHOP_PNG));
+        board[7][5].put(new Piece(false, RESOURCES_BBISHOP_PNG));
+
         
 
     }
@@ -159,7 +163,7 @@ public class Board extends JPanel implements MouseListener, MouseMotionListener 
         if (sq.isOccupied()) {
             currPiece = sq.getOccupyingPiece();
             for(Square s: currPiece.getLegalMoves(this, sq)){
-                s.setBorder(BorderFactory.createLineBorder(Color.ORANGE));
+                s.setBorder(BorderFactory.createMatteBorder(6,6,6,6,Color.RED));
             }
             fromMoveSquare = sq;
             if (currPiece.getColor() != whiteTurn)
